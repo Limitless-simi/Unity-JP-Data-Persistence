@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour
 {
     public TMP_InputField playerNameInput; // Input field for entering the player's name
     public TextMeshProUGUI bestScoreText; // Text field to display the highest score
+    public TextMeshProUGUI HighScoreText;
+    public TextMeshProUGUI pointHighScoreText;
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class MenuManager : MonoBehaviour
     {
         // Display the highest score and corresponding player name from MainGameManager
         bestScoreText.text = "Best Score: " + MainGameManager.Instance.bestScore + " Name: " + MainGameManager.Instance.playerName;
+        HighScoreText.text = MainGameManager.Instance.playerName;
+        pointHighScoreText.text = MainGameManager.Instance.bestScore.ToString();
     }
 
     public void Quit()
